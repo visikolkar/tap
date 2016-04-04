@@ -1,0 +1,81 @@
+.logo{
+	margin-top:8%;
+	margin-left: 34%;
+	display: block;
+}
+
+.list{
+	padding: 10px;
+}
+
+.item{
+	border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.button.button-calm{
+	margin-top: 34px;
+}
+
+.row{
+	display: inline-block;
+}
+
+.placeholder-icon {
+    color: #aaa;
+    position: absolute;
+    top: 40px;
+}
+
+.list .item.item-input input {
+    padding-right: 44px;
+    margin-left: 6%;
+}
+
+a.button{
+	margin-left: 4%;
+	width: 100px;
+}
+
+a.button:nth-child(1){
+	background-color: #3b5998;
+}
+
+a.button:nth-child(2){
+	background-color: #D34836;
+}
+
+a.button:nth-child(3){
+	background-color: #4099FF;
+}
+
+.row.icon{
+	font-size: 96px;
+	font-color: white;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.divider{
+	height: 10px;
+    border-bottom: 3px solid #F3F5F6;
+    text-align: center;
+    width: 90%;
+    margin: 20px;
+}
+
+.divider > span{
+	font-size: 1em;
+	background-color: white;
+	padding: 10px;
+}
+
+.signup{
+	font-size: 1em;
+	margin: 10%;
+	text-align: center;
+}
+.signup > a{
+	text-decoration: none;
+}
