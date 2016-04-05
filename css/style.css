@@ -1,3 +1,4 @@
+/* login.html css*/
 .logo{
 	margin-top:8%;
 	margin-left: 34%;
@@ -79,3 +80,34 @@ a.button:nth-child(3){
 .signup > a{
 	text-decoration: none;
 }
+
+/* home.html css */
+
+.list-item-menu{
+	border: 0px;
+}
+
+.purchase-card{
+	margin-top: 60px;
+}
+
+.item-image{
+	border: 0px;
+}
+
+.row-btn{
+	display: inline-block;
+}
+
+.button.button-buy{
+	width: 160px;
+	float: left;
+	margin-left: 4px;
+}
+
+
+
+
+
+
+

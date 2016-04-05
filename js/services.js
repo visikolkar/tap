@@ -6,7 +6,7 @@ angular.module('wTap')
 			var deferred = $q.defer();
             var promise = deferred.promise;
  
-            if (name == 'user' && pw == '123') {
+            if (name == '1' && pw == '1') {
                 deferred.resolve();
             } else {
                 deferred.reject('Wrong credentials.');

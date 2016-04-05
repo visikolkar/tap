@@ -1,8 +1,3 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
 angular.module('wTap', ['ionic'])
 
 .run(function($ionicPlatform) {
@@ -33,9 +28,36 @@ angular.module('wTap', ['ionic'])
     controller: 'LoginCtrl'
   })
 
-  .state('home', {
-    url: '/home',
+  .state('app', {
+    url: '/app',
     templateUrl: 'templates/home.html',
     controller: 'HomeCtrl'
+  })
+
+  .state('app.profile', {
+    url: '/profile',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/profile.html'
+      }
+    }
+  })
+
+  .state('app.health', {
+    url: '/health',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/health.html'
+      }
+    }
+  })
+
+  .state('app.orders', {
+    url: '/orders',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/orders.html'
+      }
+    }
   })
 })

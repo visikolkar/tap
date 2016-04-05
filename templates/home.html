@@ -1,8 +1,66 @@
-<ion-view can-swipe-back="false">
-    <ion-pane>
-      <div class="logo">
-        <img src="./img/ionic.png" alt="">
-        <h1>WaterTap</h1>
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-calm">
+      <ion-nav-title>
+          <h4 style="color:white;">WaterTap</h4>
+      </ion-nav-title>
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="right">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent">
+      <div class="list card purchase-card">
+
+        <div class="item item-avatar">
+          <img src="img/ionic.png">
+          <h2>SLV Enterprise</h2>
+          <p>Trusted Vendor</p>
+        </div>
+
+        <div class="item item-image">
+          <img src="img/ionic.jpg" height="420">
+        </div>
+
+        <!--a class="item item-icon-left assertive" href="#">
+          <i class="icon ion-music-note"></i>
+          BUY NOW
+        </a-->
+        <div class="row-btn">
+          <!--a class="button button-calm">BUY</a>
+          <a class="button button-calm">Certificate</a-->
+          <button class="button button-calm button-buy">BUY</button>
+          <button class="button button-calm button-buy">View</button>
+        </div>
+        <!--button class="button button-block button-calm">BUY</button>
+        <button class="button button-block button-calm">Certificate</button-->
       </div>
-    </ion-pane>
-</ion-view>
+    </ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="right">
+    <ion-content>
+      <div class="list card">
+        <div class="item item-avatar">
+          <img src="img/ionic.png" alt="">
+          <h2>Vishwa Kolkar</h2>
+          <p>Welcome to WaterTap!</p>
+        </div>
+      </div>
+      <ion-list>
+        <ion-item class="list-item-menu" menu-close href="#/app/profile">
+          My Profile
+        </ion-item>
+        <ion-item class="list-item-menu" menu-close href="#/app/health">
+          My Health
+        </ion-item>
+        <ion-item class="list-item-menu" menu-close href="#/app/orders">
+          My Orders
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
