@@ -43,6 +43,10 @@ a.button:nth-child(1){
 	background-color: #3b5998;
 }
 
+.custom-icon{
+	color: white;
+}
+
 a.button:nth-child(2){
 	background-color: #D34836;
 }
@@ -102,7 +106,7 @@ a.button:nth-child(3){
 .button.button-buy{
 	width: 160px;
 	float: left;
-	margin-left: 4px;
+	margin-left: 5px;
 }
 
 
