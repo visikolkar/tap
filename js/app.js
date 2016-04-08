@@ -38,7 +38,8 @@ angular.module('wTap', ['ionic'])
     url: '/profile',
     views: {
       'menuContent': {
-        templateUrl: 'templates/profile.html'
+        templateUrl: 'templates/profile.html',
+        controller:'HomeCtrl'
       }
     }
   })
