@@ -1,4 +1,4 @@
-<ion-side-menus >
+<ion-side-menus enable-menu-with-back-views="false">
   <ion-side-menu-content>
     <ion-nav-bar class="bar-calm">
       <ion-nav-title>
@@ -12,7 +12,7 @@
         </button>
       </ion-nav-buttons>
     </ion-nav-bar>
-    <ion-nav-view name="menuContent">
+    <ion-nav-view name="menuContent" class="home">
       <div class="list card purchase-card">
 
         <div class="item item-avatar">
@@ -22,29 +22,20 @@
         </div>
 
         <div class="item item-image">
-          <img src="img/ionic.jpg" height="414">
+          <img src="img/ionic.jpg" height="380">
         </div>
-
-        <!--a class="item item-icon-left assertive" href="#">
-          <i class="icon ion-music-note"></i>
-          BUY NOW
-        </a-->
         <div class="row-btn">
-          <!--a class="button button-calm">BUY</a>
-          <a class="button button-calm">Certificate</a-->
           <button class="button button-calm button-buy">Buy</button>
           <button class="button button-calm button-buy">View</button>
         </div>
-        <!--button class="button button-block button-calm">BUY</button>
-        <button class="button button-block button-calm">Certificate</button-->
       </div>
     </ion-nav-view>
   </ion-side-menu-content>
 
   <ion-side-menu side="right">
     <ion-content>
-      <div class="list card">
-        <div class="item item-avatar">
+      <div class="list card dp-card">
+        <div class="item item-avatar dp-card">
           <img src="img/ionic.png" alt="">
           <h2>Vishwa Kolkar</h2>
           <p>Welcome to WaterTap!</p>

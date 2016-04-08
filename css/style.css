@@ -1,12 +1,16 @@
 /* login.html css*/
 .logo{
-	margin-top:8%;
+	margin-top:5%;
 	margin-left: 34%;
 	display: block;
 }
 
-.list{
-	padding: 10px;
+.logo > h1{
+	margin: 0px;
+}
+
+.user-list{
+	margin: 4%;
 }
 
 .item{
@@ -15,11 +19,12 @@
     border-right: 0;
 }
 
-.button.button-calm{
-	margin-top: 34px;
+.button.button-signin{
+	margin-top: 10%;
+	font-size:	1.4em;
 }
 
-.row{
+.social-row{
 	display: inline-block;
 }
 
@@ -35,8 +40,9 @@
 }
 
 a.button{
-	margin-left: 4%;
-	width: 100px;
+	margin-left: 3.2%;
+	/*width: 44.66786660935597%;*/
+	width: 44%;
 }
 
 a.button:nth-child(1){
@@ -66,8 +72,8 @@ a.button:nth-child(3){
 	height: 10px;
     border-bottom: 3px solid #F3F5F6;
     text-align: center;
-    width: 90%;
-    margin: 20px;
+    width:89.33573321871194%;
+    margin: 0% 0% 3% 5%;
 }
 
 .divider > span{
@@ -78,7 +84,7 @@ a.button:nth-child(3){
 
 .signup{
 	font-size: 1em;
-	margin: 10%;
+	margin: 3.4%;
 	text-align: center;
 }
 .signup > a{
@@ -87,12 +93,16 @@ a.button:nth-child(3){
 
 /* home.html css */
 
+.home{
+	background-color: #F3F5F6;
+}
+
 .list-item-menu{
 	border: 0px;
 }
 
 .purchase-card{
-	margin-top: 60px;
+	margin-top: 14%;
 }
 
 .item-image{
@@ -106,7 +116,13 @@ a.button:nth-child(3){
 .button.button-buy{
 	width: 160px;
 	float: left;
-	margin-left: 5px;
+	margin-left: 6.5px;
+	margin-top: 8px;
+	font-size: 1.4em;
+}
+
+.dp-card{
+	background-color: #F3F5F6;
 }
 
 
