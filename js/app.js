@@ -24,14 +24,27 @@ angular.module('wTap', ['ionic'])
   $stateProvider
   .state('login', {
     url: '/login',
+    cache: false,
     templateUrl: 'templates/login.html',
     controller: 'LoginCtrl'
   })
 
+  .state('signup', {
+    url: '/signup',
+    cache: false,
+    templateUrl: 'templates/signup.html',
+    controller: 'SignupCtrl'
+  })
+
   .state('app', {
     url: '/app',
-    templateUrl: 'templates/home.html',
+    templateUrl: 'templates/menu.html',
     controller: 'HomeCtrl'
+  })
+
+  .state('app.home', {
+    url: '/app/home',
+    templateUrl: 'templates/home.html'
   })
 
   .state('app.profile', {

@@ -2,7 +2,6 @@ angular.module('wTap')
 
 .controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state, $q, UserService, $ionicLoading){
 	$scope.data = {};
-
 	$scope.login = function(){
 		console.log("the username is "+ $scope.data.username + "PW" +$scope.data.password);
 		LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
@@ -118,11 +117,9 @@ angular.module('wTap')
       }
     });
   };
-
-
 })
 
-.controller('HomeCtrl', function($scope, $ionicConfig, UserService) {
+.controller('HomeCtrl', function($scope, $ionicConfig, UserService, $state) {
   var data = UserService.getUser();
   document.getElementById("userName").innerHTML = data.name;
   var image = document.getElementById("userPic");
@@ -130,4 +127,41 @@ angular.module('wTap')
   console.log(data.email);
   $scope.user = {email: data.email};
 
+  $scope.goBack = function(){
+    console.log('I got clicked');
+    $state.go('app');
+  };
+
 })
+
+.controller('SignupCtrl', function($scope, $state, $ionicPopup){
+  $scope.otpPopup = function(){
+
+    $scope.data = {};
+
+    var myPopup = $ionicPopup.show({
+      template: '<input type="text" ng-model="data.otp">',
+      title: 'Verification',
+      subTitle: 'Please enter the OTP',
+      scope: $scope,
+      buttons: [
+        {
+          text: '<b>Submit</b>',
+          type: 'button-positive',
+          onTap: function(e) {
+            if (!$scope.data.otp) {
+              //don't allow the user to close unless he enters wifi password
+              e.preventDefault();
+            } else {
+              $state.go('app');
+              return $scope.data.otp;
+            }
+          }
+        }
+      ]
+    });
+
+  }
+})
+
+
