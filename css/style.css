@@ -96,7 +96,7 @@ a.button:nth-child(3){
 
 .signup-list{
 	margin-left: 4%;
-	margin-right: 4%; 
+	margin-right: 4%;
 }
 
 .button.button-signup{
@@ -177,7 +177,21 @@ a.button:nth-child(3){
 	float: left;
 }
 
+/* Health.html */
+.health{
+	display: block;
+	text-align: center;
+	opacity: 1;
+	background-image: linear-gradient(to left, rgb(131, 164, 212), rgb(182, 251, 255));
+}
 
+.health-dp{
+	border-radius: 50%;
+	margin-top: 2%;
+}
 
-
-
+.button.button-calculate{
+	width: 75%;
+	margin-left: 12.5%;
+	font-size:	1.4em;
+}
