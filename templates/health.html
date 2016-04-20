@@ -8,18 +8,18 @@
 			<h4 class="health-name"> Let's stay Hydrated..!</h4>
 			<h6 class="health-line"> Provide the below details</h6>
 		</div>
-		<div class="list">
+		<div class="list health-list">
 			<label class="item item-input">
 				<span class="input-label">DOB</span>
-				<input type="date">
+				<input type="date" ng-model="health.dob">
 			</label>
 			<label class="item item-input">
 		    <span class="input-label">Weight</span>
-		    <input type="number" min="1" placeholder="70kg">
+		    <input type="text" placeholder="70kg" ng-model="health.weight">
 		  </label>
 		  <label class="item item-input">
 		    <span class="input-label">Height</span>
-		    <input type="number" min="1" placeholder="175cm">
+		    <input type="number" min="1" placeholder="175cm" ng-model="health.height">
 		  </label>
 		  <label class="item item-input">
 		    <span class="input-label">BMI</span>
@@ -29,9 +29,9 @@
 		      Climate
 		    </div>
 		    <select>
-		      <option selected >Tropical</option>
-		      <option>Rainy</option>
-		      <option>Winter</option>
+		      <option selected value="16">Tropical</option>
+		      <option value="0">Rainy</option>
+		      <option value="8">Winter</option>
 		    </select>
 		  </label>
 			<label class="item item-input item-select">
@@ -39,10 +39,11 @@
 		      Activity
 		    </div>
 		    <select>
-		      <option selected >Sedementary</option>
-		      <option>Light Activity</option>
-		      <option>Medium Activity</option>
-					<option>Heavy Activity</option>
+		      <option selected value=".5">Sedementary</option>
+		      <option value=".56">Light Active</option>
+		      <option value=".62">Moderately Active</option>
+					<option value=".68">Very Active</option>
+					<option value=".75">Extremly Active</option>
 		    </select>
 		  </label>
 			<div class="row">
@@ -53,13 +54,13 @@
 				</div>
 				<div class="col">
 					<label class="item item-input">
-						<input type="text" placeholder="11PM">
+						<input type="text" placeholder="11PM" ng-model="health.from">
 					</label>
 				</div>
 				until
 				<div class="col">
 					<label class="item item-input">
-						<input type="text" placeholder="6AM">
+						<input type="text" placeholder="6AM" ng-model="health.to">
 					</label>
 				</div>
 			</div>

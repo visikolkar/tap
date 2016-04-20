@@ -164,4 +164,24 @@ angular.module('wTap')
   }
 })
 
+.controller('HealthCtrl', function($scope, $state, $ionicPopup){
 
+	$scope.calculate = function(){
+		console.log('calculate button got click event');
+		$scope.health = {};
+		var myPopup = $ionicPopup.show({
+      template: 'You need to drink up minimum of {{0.5 * 220 + 16}}',
+      title: 'Result',
+      scope: $scope,
+      buttons: [
+        {
+          text: '<b>Done</b>',
+          type: 'button-positive',
+          onTap: function() {
+            $state.go('app');
+          }
+        }
+      ]
+    });
+	}
+})

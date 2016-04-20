@@ -61,7 +61,8 @@ angular.module('wTap', ['ionic'])
     url: '/health',
     views: {
       'menuContent': {
-        templateUrl: 'templates/health.html'
+        templateUrl: 'templates/health.html',
+        controller: 'HealthCtrl'
       }
     }
   })
