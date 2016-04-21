@@ -15,14 +15,15 @@
 			</label>
 			<label class="item item-input">
 		    <span class="input-label">Weight</span>
-		    <input type="text" placeholder="70kg" ng-model="health.weight">
+		    <input type="text" placeholder="70kg" ng-model="health.weight" ng-change="bmicalc()">
 		  </label>
 		  <label class="item item-input">
 		    <span class="input-label">Height</span>
-		    <input type="number" min="1" placeholder="175cm" ng-model="health.height">
+		    <input type="number" min="1" placeholder="175cm" ng-model="health.height" ng-change="bmicalc()">
 		  </label>
 		  <label class="item item-input">
 		    <span class="input-label">BMI</span>
+				<input type="text" ng-value="bmi" ng-disabled="bmi">
 		  </label>
 			<label class="item item-input item-select">
 		    <div class="input-label">
@@ -34,7 +35,7 @@
 		      <option value="8">Winter</option>
 		    </select>
 		  </label>
-			<label class="item item-input item-select">
+			<label class="item item-input item-select item-activity">
 		    <div class="input-label">
 		      Activity
 		    </div>
@@ -47,18 +48,18 @@
 		    </select>
 		  </label>
 			<div class="row">
-				<div class="col">
-					<label class="item item-input">
+				<div class="col col-35">
+					<label class="item item-input item-sleep">
 						<span class="input-label">Sleep Time</span>
 					</label>
 				</div>
-				<div class="col">
+				<div class="col col-15">
 					<label class="item item-input">
 						<input type="text" placeholder="11PM" ng-model="health.from">
 					</label>
 				</div>
-				until
-				<div class="col">
+				<p class="time-seperator">until</p>
+				<div class="col col-15">
 					<label class="item item-input">
 						<input type="text" placeholder="6AM" ng-model="health.to">
 					</label>

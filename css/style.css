@@ -195,3 +195,20 @@ a.button:nth-child(3){
 	margin-left: 12.5%;
 	font-size:	1.4em;
 }
+
+.item-activity{
+	border-bottom: 0;
+}
+
+.item-sleep{
+	margin-left: -10%;
+	border-bottom: 0;
+}
+
+/*.item-from{
+	padding-right: 0!important;
+}*/
+
+.time-seperator{
+	margin-top: 5%;
+}

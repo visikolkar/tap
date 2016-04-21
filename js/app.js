@@ -67,6 +67,16 @@ angular.module('wTap', ['ionic'])
     }
   })
 
+  .state('app.record', {
+    url:'/record',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/record.html',
+        controller: 'RecordCtrl'
+      }
+    }
+  })
+
   .state('app.orders', {
     url: '/orders',
     views: {

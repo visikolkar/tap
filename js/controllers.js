@@ -165,12 +165,19 @@ angular.module('wTap')
 })
 
 .controller('HealthCtrl', function($scope, $state, $ionicPopup){
-
+	$scope.health = {};
+	$scope.bmicalc = function(){
+		var x = $scope.health.height/100;
+		var y = $scope.health.weight * 0.453592;
+		$scope.bmi = (y/(x *x)) || '';
+		console.log($scope.bmi);
+	}
 	$scope.calculate = function(){
 		console.log('calculate button got click event');
-		$scope.health = {};
+		console.log($scope.health.weight);
+		//var myPopup = this;
 		var myPopup = $ionicPopup.show({
-      template: 'You need to drink up minimum of {{0.5 * 220 + 16}}',
+      template: 'You need to drink up minimum of {{0.5 * $scope.health.weight + 16}}',
       title: 'Result',
       scope: $scope,
       buttons: [
@@ -178,10 +185,17 @@ angular.module('wTap')
           text: '<b>Done</b>',
           type: 'button-positive',
           onTap: function() {
-            $state.go('app');
+            $state.go('app.record');
           }
         }
       ]
-    });
+    }).then(function(res){
+			console.log(res);
+			console.log($scope.health.weight);
+		});
 	}
+})
+
+.controller('RecordCtrl', function($scope){
+
 })
