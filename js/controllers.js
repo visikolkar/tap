@@ -177,7 +177,7 @@ angular.module('wTap')
 		console.log($scope.health.weight);
 		//var myPopup = this;
 		var myPopup = $ionicPopup.show({
-      template: 'You need to drink up minimum of {{0.5 * $scope.health.weight + 16}}',
+      template: "{{0.5 * $scope.health.weight + 16}}",
       title: 'Result',
       scope: $scope,
       buttons: [
@@ -185,6 +185,9 @@ angular.module('wTap')
           text: '<b>Done</b>',
           type: 'button-positive',
           onTap: function() {
+						if(angular.isUndefined($scope.health.weight)){
+							console.log("the weight is undefined");
+						}
             $state.go('app.record');
           }
         }

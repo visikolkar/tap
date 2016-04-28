@@ -1,4 +1,4 @@
-angular.module('wTap', ['ionic'])
+angular.module('wTap', ['ionic', 'angular-svg-round-progressbar'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
