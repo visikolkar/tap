@@ -147,11 +147,15 @@ angular.module('wTap')
 		if(form.$valid){
 			var req = {
 				method: 'POST',
-				url: 'http://www.ews.jvmhost.net/EWS/app/user/doValidOTP',
+        //below url is for the local dev only ruunning on the browser
+				//url: '/api/userRegister',
+        //below url is for the production app running on the device
+        url: 'http://eazybottle.com/EWS/app/user/userRegister',
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				data: $scope.authorize
+				//data: $scope.authorize
+        data: "fName="+$scope.authorize.fullname+ "&lName=" +$scope.authorize.fullname+ "&emailId=" +$scope.authorize.email+ "&password=" +$scope.authorize.password+ "&phoneNumber=" +$scope.authorize.phoneNumber+ "&deviceId=dfa&deviceModel=daf&platform=adf"
 			};
 
 			$http(req).then(successCallback, errorCallback);
@@ -164,6 +168,7 @@ angular.module('wTap')
 					subTitle: 'Please enter the OTP',
 					scope: $scope,
 					buttons: [
+            {text: 'Resend OTP'},
 						{
 							text: '<b>Submit</b>',
 							type: 'button-positive',
@@ -183,28 +188,6 @@ angular.module('wTap')
 
 			function errorCallback(response){
 				console.log('the api errorCallback' + response);
-				var myPopup = $ionicPopup.show({
-					template: '<input type="text" ng-model="data.otp">',
-					title: 'Verification',
-					subTitle: 'Please enter the OTP',
-					scope: $scope,
-					buttons: [
-						{ text: 'Resend OTP' },
-						{
-							text: '<b>Submit</b>',
-							type: 'button-positive',
-							onTap: function(e) {
-								if (!$scope.data.otp) {
-									//don't allow the user to close unless he enters OTP
-									e.preventDefault();
-								} else {
-									$state.go('app.home');
-									return $scope.data.otp;
-								}
-							}
-						}
-					]
-				});
 			};
 		} else{
 			console.log("Form is invalid");
