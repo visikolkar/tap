@@ -43,8 +43,13 @@ angular.module('wTap', ['ionic', 'angular-svg-round-progressbar'])
   })
 
   .state('app.home', {
-    url: '/app/home',
-    templateUrl: 'templates/home.html'
+    url: '/home',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/home.html',
+        //controller:'HomeCtrl'
+      }
+    }
   })
 
   .state('app.profile', {

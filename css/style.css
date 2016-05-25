@@ -114,6 +114,14 @@ a.button:nth-child(3){
 	margin: 0px;
 }
 
+.has-errors {
+  border-bottom: 1px solid #B83E2C;
+}
+
+.no-errors {
+  border-bottom: 2px solid green;
+}
+
 /* home.html css */
 
 .button-back{
@@ -211,4 +219,25 @@ a.button:nth-child(3){
 
 .time-seperator{
 	margin-top: 5%;
+}
+
+/* record.html */
+.card-round-progress{
+	text-align: center;
+}
+
+.button.button-calm.button-round{
+	height: 65px;
+	width: 65px;
+	border-radius: 50%;
+	margin: 0;
+	padding: 0;
+}
+
+.custom-round-icon{
+	position: absolute;
+	top:85%;
+	left:40%;
+	font-size: 64px;
+	color: #0a9dc7;
 }

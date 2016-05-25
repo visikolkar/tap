@@ -5,7 +5,7 @@ angular.module('wTap')
 	$scope.login = function(){
 		console.log("the username is "+ $scope.data.username + "PW" +$scope.data.password);
 		LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
-            $state.go('app');
+            $state.go('app.home');
         }).error(function(data) {
             var alertPopup = $ionicPopup.alert({
                 title: 'Login failed!',
@@ -34,7 +34,7 @@ angular.module('wTap')
         picture : "http://graph.facebook.com/" + authResponse.userID + "/picture?type=large"
       });
       $ionicLoading.hide();
-      $state.go('app');
+      $state.go('app.home');
     }, function(fail){
       // Fail get profile info
       console.log('profile info fail', fail);
@@ -91,13 +91,13 @@ angular.module('wTap')
               picture : "http://graph.facebook.com/" + success.authResponse.userID + "/picture?type=large"
             });
 
-            $state.go('app');
+            $state.go('app.home');
           }, function(fail){
             // Fail get profile info
             console.log('profile info fail', fail);
           });
         }else{
-          $state.go('app');
+          $state.go('app.home');
         }
       } else {
         // If (success.status === 'not_authorized') the user is logged in to Facebook,
@@ -129,38 +129,86 @@ angular.module('wTap')
 
   $scope.goBack = function(){
     console.log('I got clicked');
-    $state.go('app');
+    $state.go('app.home');
   };
 
 })
 
-.controller('SignupCtrl', function($scope, $state, $ionicPopup){
-  $scope.otpPopup = function(){
+.controller('SignupCtrl', function($scope, $state, $ionicPopup, $http){
 
-    $scope.data = {};
+	$scope.authorize = {
+		fullname: '',
+		email: '',
+		phoneNumber: '',
+		password: ''
+	};
+  $scope.otpPopup = function(form){
 
-    var myPopup = $ionicPopup.show({
-      template: '<input type="text" ng-model="data.otp">',
-      title: 'Verification',
-      subTitle: 'Please enter the OTP',
-      scope: $scope,
-      buttons: [
-        {
-          text: '<b>Submit</b>',
-          type: 'button-positive',
-          onTap: function(e) {
-            if (!$scope.data.otp) {
-              //don't allow the user to close unless he enters wifi password
-              e.preventDefault();
-            } else {
-              $state.go('app');
-              return $scope.data.otp;
-            }
-          }
-        }
-      ]
-    });
+		if(form.$valid){
+			var req = {
+				method: 'POST',
+				url: 'http://www.ews.jvmhost.net/EWS/app/user/doValidOTP',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				data: $scope.authorize
+			};
 
+			$http(req).then(successCallback, errorCallback);
+			function successCallback(response){
+				console.log('the api success callback' + response);
+				$scope.data = {};
+				var myPopup = $ionicPopup.show({
+					template: '<input type="text" ng-model="data.otp">',
+					title: 'Verification',
+					subTitle: 'Please enter the OTP',
+					scope: $scope,
+					buttons: [
+						{
+							text: '<b>Submit</b>',
+							type: 'button-positive',
+							onTap: function(e) {
+								if (!$scope.data.otp) {
+									//don't allow the user to close unless he enters OTP
+									e.preventDefault();
+								} else {
+									$state.go('app.home');
+									return $scope.data.otp;
+								}
+							}
+						}
+					]
+				});
+			};
+
+			function errorCallback(response){
+				console.log('the api errorCallback' + response);
+				var myPopup = $ionicPopup.show({
+					template: '<input type="text" ng-model="data.otp">',
+					title: 'Verification',
+					subTitle: 'Please enter the OTP',
+					scope: $scope,
+					buttons: [
+						{ text: 'Resend OTP' },
+						{
+							text: '<b>Submit</b>',
+							type: 'button-positive',
+							onTap: function(e) {
+								if (!$scope.data.otp) {
+									//don't allow the user to close unless he enters OTP
+									e.preventDefault();
+								} else {
+									$state.go('app.home');
+									return $scope.data.otp;
+								}
+							}
+						}
+					]
+				});
+			};
+		} else{
+			console.log("Form is invalid");
+		}
   }
 })
 
